@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--
+         要点：浮动、负边距效果、mainbox增加内容div并设置margin、:after清除浮动
+
+        原理:mainbox的浮动并将其宽度设置为100%，次要内容及侧边栏设置固定宽度并浮动，
+      利用mainbox中的.contentd的默认宽度值（auto）与margin左右所留的空白，及利用负边距原理将次要内容和侧边栏“引”到主要内容的两边。
+         缺点：缩小到一定程度会变形-->
+
+    <style type="text/css">
+        *{padding:0;margin:0;}
+        /*设置主要内容的外层div标签浮动，并将宽度设置为100%；*/
+        .mainbox{background:#ccc;width:100%;float:left;}
+        /*设置主要内容的内层div的magin值，留出空白位置给左右两列*/
+        .mainbox .content{margin:0 210px 0 310px; background:red;}
+        /*将次要内容设置左浮动，并设置宽度为300px，负边距为左侧-100%*/
+        .subminbox{width:300px;float:left;background:yellow;margin-left:-100%;}
+        /*将侧边距设置左浮动，并设置宽度为200px，负边距为左侧-200px*/
+        .sidebox{width: 200px;float:left;background:green;margin-left:-200px;}
+        .footer{background:darkseagreen;}
+        .container:after {
+            display:block;
+            visibility:hidden;
+            font-size:0;
+            line-height:0;
+            clear:both;
+            content:"";
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="mainbox">
+        <div class="content">
+            <h1> mainbox主要内容</h1>
+            <p>春眠不觉晓</p>
+            <p>处处闻啼鸟</p>
+            <p>夜来风雨声</p>
+            <p>花落知多少</p></div>
+    </div>
+    <div class="subminbox">
+        <h1>subminbox次要内容</h1>
+        <p>春眠不觉晓</p>
+        <p>处处闻啼鸟</p>
+        <p>夜来风雨声</p>
+        <p>花落知多少</p>
+    </div>
+    <div class="sidebox">
+        <h1>sidebox侧边栏</h1>
+        <p>春眠不觉晓</p>
+        <p>处处闻啼鸟</p>
+        <p>夜来风雨声</p>
+        <p>花落知多少</p>
+    </div>
+</div>
+<div class="footer"><h1>footer底部</h1></div>
+
+</body>
+</html>

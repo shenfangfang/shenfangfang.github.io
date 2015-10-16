@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--
+      要点：浮动、负边距效果、mainbox增加内容div并设置margin、:after清除浮动、js实现等高
+      原理：mainbox的浮动并将其宽度设置为100%，次要内容及侧边栏设置固定宽度并浮动，mainbox中的.contentd的默认宽度设置为值（auto），margin左右所留的空白等于两列的宽度，并利用负边距原理将次要内容和侧边栏“引”到主要内容的两边。。-->
+    <style type="text/css">
+        *{padding:0;margin:0;}
+        .mainbox{background:#ccc;width:100%;float:left;}
+        .mainbox .content{margin:0 210px 0 0;background:red}
+        .sidebox{width: 200px;float:left;background:green;margin-left:-200px;}
+        .footer{background:yellow}
+        .container:after {
+            display:block;
+            visibility:hidden;
+            font-size:0;
+            line-height:0;
+            clear:both;
+            content:"";
+        }
+    </style>
+</head>
+<body>
+<div class="container" >
+    <div class="mainbox" id="mainbox">
+        <div class="content">
+            <h1> mainbox</h1>
+
+            <p>春眠不觉晓</p>
+
+            <p>处处闻啼鸟</p>
+
+            <p>夜来风雨声</p>
+
+            <p>花落知多少</p>
+        </div>
+    </div>
+    <div class="sidebox" id="sidebox">
+        <h1> sidebox</h1>
+
+        <p>春眠不觉晓</p>
+
+        <p>处处闻啼鸟</p>
+
+ </div>
+</div>
+<div class="footer"><h1>footer底部</h1></div>
+
+<!--增加js代码实现两列等高-->
+<script type="text/javascript">
+    var mh = document.getElementById('mainbox');
+    var sh = document.getElementById('sidebox');
+    if (mh.clientHeight < sh.clientHeight)
+    {
+        mh.style.height = sh.clientHeight + "px";
+    } else {
+        sh.style.height = mh.clientHeight + "px";
+    }
+</script>
+</body>
+</html>

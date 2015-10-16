@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--　要点：浮动、定位、负边距效果 :after清除浮动：
+    问题：当sideBox的内容很多时，使用绝对定位导致无法撑开父元素的高度，而且会覆盖其他元素的内容。解决方案是使用javascript重新判断父元素的高度来解决-->
+
+    <!-- 左侧定宽，右侧自适应，
+    1、左侧设置固定宽度，右侧设置宽度为100%（宽度不能设置为auto，必须设置为100%），
+    2、左右侧分别设置浮动。
+    3、设置包裹块为相对定位position:relative，左侧为绝对定位position:absolute，定位位置为left:0;top:0 （注意是定宽的列设置定位）
+    4、右侧设置margin-right为负值，值等于左侧固定宽度值
+    -->
+    <style type="text/css">
+
+        *{padding:0;margin:0;}
+        .container{position:relative;}
+        .sidebox{width:200px;float:left;background:red;position:absolute;left:0;top:0;}
+        .mainbox{width:100%;float:right;margin-right:-200px;background:green;}
+        .footer{background:yellow;}
+        .container:after {
+            display:block;
+            visibility:hidden;
+            font-size:0;
+            line-height:0;
+            clear:both;
+            content:"";
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="sidebox" id="sidebox">
+        <h1> sidebox</h1>
+
+        <p>春眠不觉晓</p>
+
+        <p>处处闻啼鸟</p>
+
+        <p>夜来风雨声</p>
+
+        <p>花落知多少</p>
+    </div>
+    <div class="mainbox" id="mainbox">
+        <h1> mainox</h1>
+        <p>春眠不觉晓</p>
+
+        <p>处处闻啼鸟</p>
+
+ </div>
+
+</div>
+<div class="footer">
+    <h1>footer</h1>
+</div>
+
+<!--增加js代码实现两列等高-->
+<script type="text/javascript">
+    var mh = document.getElementById('mainbox');
+    var sh = document.getElementById('sidebox');
+    if (mh.clientHeight < sh.clientHeight)
+    {
+        mh.style.height = sh.clientHeight + "px";
+    } else {
+        sh.style.height = mh.clientHeight + "px";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--要点：在页面底部增加js代码实现两列等高;-->
+    <style type="text/css">
+
+        *{padding:0;margin:0;}
+        .container{overflow:hidden;position:relative; }
+        .mainbox{width:100%;float:left;background:green;margin-right:200px;}
+        .sidebox{width:200px;background:red;float:right;margin-left:-200px;position:absolute;top:0;right:0; }
+        .footer{background:yellow;}
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div class="sidebox" id="sidebox">
+        <h1> sidebox</h1>
+
+        <p>春眠不觉晓</p>
+
+        <p>处处闻啼鸟</p>
+
+
+    </div>
+    <div class="mainbox" id="mainbox">
+        <h1> mainox</h1>
+        <p>春眠不觉晓</p>
+
+        <p>处处闻啼鸟</p>
+
+        <p>夜来风雨声</p>
+
+        <p>花落知多少</p>
+    </div>
+
+</div>
+<div class="footer">
+    <h1>footer</h1>
+</div>
+<!--增加js代码实现两列等高-->
+<script type="text/javascript">
+    var mh = document.getElementById('mainbox');
+    var sh = document.getElementById('sidebox');
+    if (mh.clientHeight < sh.clientHeight)
+    {
+        mh.style.height = sh.clientHeight + "px";
+    } else {
+        sh.style.height = mh.clientHeight + "px";
+    }
+</script>
+</body>
+</html>

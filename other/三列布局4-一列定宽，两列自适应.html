@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三列布局，一列定宽，两列自适应</title>
+    <!--主要原理是mainbox的浮动并将其宽度设置为100%，将subminbox宽度设置为百分比，将sidebox宽度设置为固定值，
+        再利用mainbox中的.contentd的默认宽度值（auto）与margin左右所留的空白，及利用负边距原理将次要内容和侧边栏“引”到主要内容的两边。-->
+    <style type="text/css">
+        *{padding:0;margin:0;}
+        /*设置主要内容的外层div标签浮动，并将宽度设置为100%；*/
+        .mainbox{background:red;width:100%;float:left;}
+        /*设置主要内容的内层div的magin值，留出空白位置给左右两列，要注意左侧的magin值为百分比，意味着左侧留出的空白位置是自适应的*/
+        .mainbox .content{margin:0 200px 0 40%}
+        /*将次要内容设置左浮动，并设置宽度为40%，左侧边距为-100%*/
+        .subminbox{width:40%;float:left;background:yellow;margin-left:-100%;}
+        /*将侧边距设置左浮动，并设置宽度为200px，负边距为左侧-200px*/
+        .sidebox{width: 200px;float:left;background:green;margin-left:-200px;}
+        .footer{clear:both;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="mainbox">
+        <div class="content"><h1>maibox主要内容</h1></div>
+    </div>
+    <div class="subminbox"><h1>subminbox次要内容</h1></div>
+    <div class="sidebox"><h1>sidebox侧边栏</h1></div>
+</div>
+<div class="footer"><h1>footer底部</h1></div>
+
+</body>
+</html>

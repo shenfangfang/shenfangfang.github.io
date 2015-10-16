@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--要点：两容器设置margin-bottom:-9999px; padding-bottom:9999px，父元素设置overflow:hidden;
+       问题：如果页面使用<a>做页面跳转，将会隐藏部分文字信息。如果将背景图片放到mainBox或者sideBox底部，将看不到背景图片。
+            左侧（非定位）内容高度不能大于右侧（已定位）的内容高度，否则将无法撑开容器的高度
+    -->
+    <style type="text/css">
+
+        *{padding:0;margin:0;}
+        .container{overflow:hidden;position:relative; }
+        .mainbox{width:100%;float:left;background:green;margin-right:200px;}
+        .sidebox{width:200px;background:red;float:right;margin-left:-200px;position:absolute;top:0;right:0; }
+        .footer{background:yellow;}
+
+        /*实现左右两侧等高，但要注意的是，左侧（非定位）内容高度不能大于右侧（已定位）的内容高度，否则将无法撑开容器的高度*/
+        .mainbox,.sidebox{margin-bottom:-9999px;padding-bottom:9999px;}
+
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <div class="sidebox" id="sidebox">
+        <h1> sidebox</h1>
+
+        <p>春眠不觉晓</p>
+
+        <p>处处闻啼鸟</p>
+
+
+    </div>
+    <div class="mainbox" id="mainbox">
+        <h1> mainox</h1>
+        <p>春眠不觉晓</p>
+
+        <p>处处闻啼鸟</p>
+
+        <p>夜来风雨声</p>
+
+        <p>花落知多少</p>
+    </div>
+
+</div>
+<div class="footer">
+    <h1>footer</h1>
+</div>
+
+</body>
+</html>
