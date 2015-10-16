@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--　 要点：float、width固定、 :after清除浮动。
+          前提：两列的盒模型宽度相加不能大于父元素的宽度，否则会出现错位现象。-->
+    <style type="text/css">
+        *{padding:0;margin:0;}
+        .container{width:960px; }
+        .mainbox{width:600px;float:left;background:green;}
+        .sidebox{width:360px;float:right;background:red;}
+        .footer{background:yellow;width:960px;}
+        .container:after {
+            display:block;
+            visibility:hidden;
+            font-size:0;
+            line-height:0;
+            clear:both;
+            content:"";
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="sidebox" id="sidebox">
+        <h1> sidebox</h1>
+        <p>春眠不觉晓</p>
+        <p>处处闻啼鸟</p>
+        <p>夜来风雨声</p>
+        <p>花落知多少</p>
+
+    </div>
+    <div class="mainbox" id="mainbox">
+        <h1> mainox</h1>
+        <p>春眠不觉晓</p>
+        <p>处处闻啼鸟</p>
+
+    </div>
+
+</div>
+<div class="footer">
+    <h1>footer</h1>
+</div>
+
+</body>
+</html>
