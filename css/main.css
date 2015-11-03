@@ -7,13 +7,14 @@
 .wrap {
     width: 500px;
     font-size: 20px;
-    margin: 20px auto;
+    margin: 30px auto;
     border: 1px solid #b2dba1;
     box-shadow:4px 4px 16px #666;
     /*text-shadow:10px 5px 2px blue;*/
 }
 
 .list li a {
+    margin-top: 5px;
     display: block;
     text-indent: 20px;
     height: 30px;
