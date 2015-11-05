@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>CSS制作立体导航</title>
-    <link rel="stylesheet" href="http://www.w3cplus.com/demo/css3/base.css">
     <style>
         body{
             background: #ebebeb;
@@ -11,11 +10,11 @@
         .nav{
             width:560px;
             height: 50px;
-            font:bold 0/50px Arial;
+            font:bold 13px/50px Arial;
             text-align:center;
             margin:40px auto 0;
             background: #f65f57;
-            /*制作圆*/
+            /*制作圆角效果*/
             border-radius:8px;
             /*制作导航立体风格*/
             box-shadow:1px 5px #a05f57 ;
@@ -40,7 +39,6 @@
             position:relative;
             display:inline-block;
             padding:0 16px;
-            font-size: 13px;
             text-shadow:1px 2px 4px rgba(0,0,0,.5);
             list-style: none outside none;
         }
@@ -55,7 +53,7 @@
 
             background:linear-gradient(to bottom,#f82f87,#B0363F,#f82f87);
         }
-        /*删除第一项和最后一项导航分隔线*/
+        /*最后一项导航分隔线*/
         .nav li:last-child:after{
             width:0px;
             height:0px;
@@ -66,6 +64,10 @@
             color:#fff;
             text-decoration: none;
         }
+
+
+
+
 
     </style>
 </head>

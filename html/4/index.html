@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../../css/jquery-1.11.3.js"></script>
+    <title>列表折叠效果1</title>
+    <style type="text/css">
+        .colordiv {
+            border-bottom: 1px dotted #cccccc;
+            height: 30px;
+            line-height: 30px;
+            font-size: 11px;
+            color: grey;
+        }
+
+        ul {
+            list-style: none;  width: 500px;
+        }
+
+        span {
+        }
+
+        ul li {
+            display: block;
+            float: left;
+            margin-right: 40px;
+        }
+
+        .colordiv a {
+            text-decoration: none;
+            color: grey;
+        }
+
+        .colordiv a:hover {
+            color: darkred
+        }
+
+        .more {
+            position: absolute;
+            background: url(images/more.png) 0px -66px no-repeat;
+            height: 5px;
+            width: 11px;
+            margin-top: 12px;
+        }
+
+        .more1 {
+            position: absolute;
+            /*设置div元素背景时需先设置元素的宽高，并设置为绝对定位，背景图片设置xpos ypos才能生效*/
+            background: url(images/more.png) 0px -72px no-repeat;
+            height: 5px;
+            width: 11px;
+            margin-top: 12px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            var $colormore = $("ul li:gt(6)");
+            $colormore.hide();
+            test1();
+        });
+        var flg = 1;
+        function test1() {
+            if (flg == 0) {
+                var $colormore = $("ul li");
+                $colormore.show();
+                $("#showmore").html("收起<i class='more1'>");
+                flg = 1;
+            } else {
+                var $colormore = $("ul :gt(6)");
+                $colormore.hide();
+                $("#showmore").html("更多<i class='more'>");
+                flg = 0;
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+<div class="colordiv">
+    <span id="color">颜色分类</span>
+    <ul>
+        <li>黑色</li>
+        <li>绿色</li>
+        <li>白色</li>
+        <li>浅灰色</li>
+        <li>蓝色</li>
+        <li>红色</li>
+        <li>粉红色</li>
+        <li>黄色</li>
+        <li>褐色</li>
+        <li>紫色</li>
+        <li>透明</li>
+        <li>花色</li>
+    </ul>
+    <a href="javascript:test1();" id="showmore"></a>
+</div>
+
+</body>
+</html>

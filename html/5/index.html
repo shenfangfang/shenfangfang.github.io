@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="../../css/jquery-1.11.3.js"></script>
+    <!--<script type="text/javascript" src="../../css/jquery-1.8.2.min.js" ></script>-->
+    <link rel="stylesheet" href="../../css/main.css"/>
+    <title>列表折叠效果2</title>
+    <style type="text/css">
+        .pinpaidiv {
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            width: 400px;
+            margin: 0 auto;
+        }
+
+        ul li {
+            float: left;
+            padding: 20px;
+        }
+
+       li a i{font-style:italic;}
+
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            var $hide = $("ul li:gt(8):not(:last)"); //获得索引值大于8且不是最后一个的集合
+            $hide.hide(); //隐藏上面获取到的jquery对象
+            var $showmorebtn = $("div #showmore>a");  //获取“显示更多品牌”按钮
+            $showmorebtn.click(function () {           //给获取的按钮添加点击时间
+                if($hide.is(":visible")){              //如果&hide对象显示
+                    $hide.hide();                       //隐藏 $hide
+                    $(this).find("span").text("显示更多品牌"); //并修改按钮显示文本内容为“显示更多品牌”
+                }
+                else{
+                    $hide.show();                              //否则。显示$hide
+                    $(this).find("span").text("精简显示品牌");   //并修改按钮显示文本内容为“精简显示品牌”
+                }
+               return false;   //，a标签默认点击后会跳转，此语句使超链接不跳转
+            })
+
+//            第二种方法，使用toogle方法, 但是toggle()方法支持目前主流稳定的jQuery版本1.8.2，在1.9.0之后的版本是不支持的。
+//            $showmorebtn.toggle(
+//            function () {
+//                $hide.show();
+//                $(this).find("span").text("精简显示品牌");
+//            },function() {
+//                $hide.hide();
+//                $(this).find("span").text("显示更多品牌");
+//
+//                })
+      })
+    </script>
+</head>
+<body>
+<div class="pinpaidiv">
+    <span id="pinpaifen">相机品牌</span>
+    <ul class="float_box_1">
+        <li>佳能<a><i>(3440)</i></a></li>
+        <li>索尼<a><i>(27220)</i></a></li>
+        <li>三星<a><i>(20808)</i></a></li>
+        <li>尼康<a><i>(17821)</i></a></li>
+        <li>松下<a><i>(1220)</i></a></li>
+        <li>卡西欧<a><i>(1450)</i></a></li>
+        <li>富士<a><i>(17890)</i></a></li>
+        <li>柯达<a><i>(9809)</i></a></li>
+        <li>宾得<a><i>(2345)</i></a></li>
+        <li>理光<a><i>(1466)</i></a></li>
+        <li>奥林巴斯<a><i>(1223)</i></a></li>
+        <li>明基<a><i>(7225)</i></a></li>
+        <li>其他品牌相机<a><i>(65767)</i></a></li>
+    </ul>
+    <div id="showmore">
+        <a href="#"><span>显示更多品牌</span></a>
+    </div>
+</div>
+
+</body>
+</html>
