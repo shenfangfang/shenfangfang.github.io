@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script style="text/javascript" src="../../css/jquery-1.11.3.js"></script>
+    <style type="text/css">
+        * { margin:0; padding:0;}
+        ul, li { list-style:none; }
+        .v_show{width:730px;margin:20px auto;position:relative;background-color:rgba(0,0,0,0.1); }/*设置整个区域宽度，居中，并设置背景色*/
+        .highlight_tip{float:right;margin:14px 14px 0 0;} /*设置圆点显示在右上角，并使圆点居中，右侧留有一定宽度*/
+        .highlight_tip span{float:left;text-indent:-9999px; margin:0 2px; width:6px;height:6px;background-color:rgba(255,255,255,1);border-radius:3px;} /*使用border-radius特性设置每个span为白色圆点，且使原先span中的文字不显示（text-indent:-9999px;）*/
+        .highlight_tip .current{width:6px;height:6px;background-color:rgba(36,146,255,1);border-radius:3px;} /*设置当前页面的圆点为蓝色圆点*/
+
+        .v_caption .change_btn{ margin:0}
+        /* 左右按键相对于v_show定位*/
+        .v_caption .change_btn .prev{width:20px;height:30px;line-height:30px;font-size:30px;font-family: simsun;position:absolute;top:50%;z-index: 1;left:0;color:white;}
+        .v_caption .change_btn .next {width:20px;height:30px;line-height:30px;font-size:30px;font-family: simsun;position:absolute;top:50%;z-index:1;right:0;color:white; }
+        .v_caption .change_btn .prev:hover, .v_caption .change_btn .next:hover{background-color:#c0c0c0;} /*左右按钮鼠标滑过时显示背景色*/
+
+
+        .v_content{width:730px;height:450px;overflow:hidden;position:relative;}
+        .v_content_list { position:absolute; width:3700px;top:0px; left:0px; }
+        .v_content_list ul li{float:left;}
+        .v_content_list img{margin:15px 0px 0 0px;}
+        .v_content_list h4{margin-left:10px;}
+        .v_content_list span{margin-left:10px;}
+
+         .yd{width:6px;height:6px;background-color:rgba(36,146,255,1);border-radius:3px;}
+    </style>
+</head>
+<body>
+<div class="v_show">
+    <div class="v_caption">
+        <div class="highlight_tip">
+            <span class="current">1</span><span>2</span><span>3</span><span>4</span>
+        </div>
+        <div class="change_btn">
+            <span class="prev" >&lt</span>
+            <span class="next">&gt</span>
+        </div>
+    </div>
+    <div class="v_content">
+        <div  class="v_content_list">
+            <ul>
+                <li><a href="#"><img src="images/1.jpg"  /></a></li>
+                <li><a href="#"><img src="images/2.jpg"  /></a></li>
+                <li><a href="#"><img src="images/3.jpg"  /></a></li>
+                <li><a href="#"><img src="images/4.jpg" /></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="yd"></div>
+</body>
+<script type="text/javascript">
+    $(function(){
+        var page = 1;
+        var i = 1; //每版放1个图片
+        $("span.prev").click(function(){
+            var $parent=$(this).parents("div.v_show");
+            var $v_content=$parent.find("div.v_content");
+            var $v_show=$parent.find("div.v_content_list");
+            var v_width=$v_content.width();
+            var len=$v_show.find("li").length;
+            var page_count=Math.ceil(len/i);
+            if( !$v_show.is(":animated") ){    //判断“视频内容展示区域”是否正在处于动画
+                if( page == 1 ){  //已经到第一个版面了,如果再向前，必须跳转到最后一个版面。
+                    $v_show.animate({ left : '-='+v_width*(page_count-1) }, "slow");
+                    page = page_count;
+                }else{
+                    $v_show.animate({ left : '+='+v_width }, "slow");
+                    page--;
+                }
+            }
+            $parent.find("span").eq((page-1)).addClass("current").siblings().removeClass("current");
+        });
+
+        $("span.next").click(function(){
+            $parent=$(this).parents("div.v_show");
+            $v_content=$parent.find("div.v_content");
+            $v_show=$parent.find("div.v_content_list");
+            v_width=$v_content.width();
+            var len=$v_show.find("li").length;
+            var page_count=Math.ceil(len/i);
+            if(page==page_count){
+                $v_show.animate({left:'0px'},"slow");
+                page=1;
+            }
+            else{
+                 $v_show.animate({left:'-='+v_width},"slow");
+                page++;
+
+            }
+            $parent.find("span").eq((page-1)).addClass("current").siblings().removeClass("current");
+        });
+
+    });
+
+
+</script>
+
+</html>
