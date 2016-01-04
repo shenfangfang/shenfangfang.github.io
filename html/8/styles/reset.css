@@ -1,0 +1,9 @@
+*{padding:0;margin:0}
+body,button,input,select,textarea{font:12px/1.5 tahoma,arial,\5b8b\4f53;}
+h1,h2,h3,h4,h5,h6{font-size:100%}  /*字体大小为基于父元素的百分比*/
+address,cite,dfn,em.var{font-style:normal;} /*normal默认值，浏览器显示一个标准的字体样式*/
+ul,ol{list-style:none;}
+a{text-decoration:none;}
+.clear{clear:both;} /*index.html中的.jnCatainfo中的ul元素后；#jnBrand #jnBrandTab ul元素后*/
+.hide{display:none;}
+

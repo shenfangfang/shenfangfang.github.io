@@ -1,0 +1,19 @@
+//index.html界面头部搜索文本框效果
+$(function(){
+    $("#inputSearch").focus(function(){
+        $(this).addClass("focus");
+        if($(this).val()==this.defaultValue){
+            $(this).val("");
+        }
+    }).blur(function(){
+        $(this).removeClass("focus");
+        if($(this).val()==""){
+            $(this).val(this.defaultValue);
+        }
+    }).keyup(function(e){
+        /*当按下键盘enter时且搜索内容不为空时，提交表单*/
+        if((e.which==13)&&($(this).val()!="")){
+            alert("回车提交表单");
+        }
+    })
+})

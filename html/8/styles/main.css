@@ -1,0 +1,196 @@
+/*头部*/
+#header{background:url(../images/headerbg.png) repeat-x scroll 0 0;height:105px;} /*头部最外层，设置一个背景图，沿X轴重复，随页面滚动，从0 0位置开始显示图片,设置一个高度*/
+#header .contWidth{position:relative;width:990px;height:105px;margin:0 auto;}/*设置相对定位，方便子元素进行定位，居中显示*/
+#header .logo{position:absolute; top:1px;left:14px;}/*logo定位*/
+#header .search{position:absolute;top:20px; left:198px;} /*搜索定位*/
+#header .search #inputSearch{font-size:14px;color: #999999;border: 1px solid #BABEBF;padding: 3px 6px 5px 6px;width:200px;height: 17px;} /*搜索输入框*/
+#header .search #inputSearch.focus{border: 1px solid #00A5FF;outline:none;  } /*搜索框焦点事件使用；outline设置为none时可以去掉默认的焦点边框；*/
+#header #skin{float:right;width:120px;font-size:0;margin-right:25px;margin-top:10px;} /*（15*6）+（5*6）=120,每个li元素的宽（15）+margin（5）值等于元素的宽度； font-size：0可以去掉li元素之间自带的空白，且使文字不显示*/
+#header #skin li{float:left;width:15px;height:15px;background-image:url(../images/theme.gif);margin-left:5px;cursor:pointer;overflow:hidden;} /*必须设置background-image；而不能是background，否则单个背景定位不能正确显示。*/
+#skin_0{background-position:0 0;}
+#skin_1{ background-position: -99px 0;}
+#skin_2{ background-position: -80px 0;}
+#skin_3{ background-position: -60px 0;}
+#skin_4{ background-position: -40px 0;}
+#skin_5{ background-position: -20px 0;}
+
+#skin_0.selected{background-position:0 -15px;}
+#skin_1.selected{ background-position: -99px -15px;}
+#skin_2.selected{ background-position: -80px -15px;}
+#skin_3.selected{ background-position: -60px -15px;}
+#skin_4.selected{ background-position: -40px -15px;}
+#skin_5.selected{ background-position: -20px -15px;}
+/*导航栏样式*/
+#header .mainNav{position:absolute;top:67px;left:0;width:990px;height:37px;line-height:37px;background-color:rgb(74,74,74);} /*整个导航栏相对于.contWidth定位*/
+.mainNav .nav{margin-left:30px;} /*导航栏中的ul距左边25px*/
+.mainNav ul li{float:left;margin-right:29px;position:relative;} /*设置相对定位，便于它的子元素二级导航菜单进行定位*/
+.mainNav ul li a{font-weight:bold;font-size:14px;color:#FFFFFF;}
+
+/*二级导航样式*/
+.jnNav{width:475px;height:145px; background-color:#FFFFFF;border: 1px solid #B1B1B1;position:absolute;top: 37px;left:0;z-index:100;}/*二级导航相对于它的父元素li定位；设置宽高、背景、边框等*/
+/*dl：definition list，定义列表   dt：definition term 定义术语   dd：definition description 定义描述*/
+.jnNav dl{border-top:1px dashed #C4C4C4;} /*dl表格上边框为虚线*/
+
+.jnNav dl dt{line-height:55px;height:55px; text-align:center;width:76px;padding:4px 3px;float:left} /*dl是块状元素，浮动使后面的dd元素与它同行显示；设置高度和行高居中显示*/
+.jnNav dl dt a{font-size:12px;font-weight:bold;color:#000;}/*dt的文字设置*/
+/*.jnNav dl em{ }*/
+.jnNav dl dd a{display:inline-block;font-style:normal;height:15px;line-height:15px;font-size:10px;font-weight:normal;
+    border-right: 1px solid #CCCCCC;padding:0 10px 0 5px;color:#666; }/*内联元素之间都带一个默认的间距，a是内联元素；增加左右padding值，使a元素左右间距相等，设置右边框*/
+.jnNav dl dd a.noborder{border-right:none;}  /*dd（内容）的最后一项不设置边框*/
+
+/*开始设置主体内容*/
+#content{ margin:8px 0 }/*设置主体内容距上下的间距*/
+#content .janeshop{margin:0 auto;position:relative;width:990px;height:560px;overflow: hidden;} /*居中显示，设置宽高、相对定位，便于子元素定位*/
+
+/*左侧商品分类树*/
+#jnCatalog{width:190px;height:560px;position:absolute;top:0;left:0;}
+#jnCatalog h2{background-color:#6E6E6E;color:#FFFFFF;font-size:12px;height:30px;line-height:30px; text-indent: 13px;}/*标题高、背景色、文字及缩进等，这里文字缩进用text-indent，而不用padding；用padding会增加元素的宽度*/
+.jnCatainfo{border:1px solid #6E6E6E;border-width:0 1px 1px;padding-bottom:10px; }
+.jnCatainfo h3{height:25px; line-height:25px;text-indent:13px;border-bottom:solid 1px #EEEEEE;padding-top:7px;}
+.jnCatainfo ul{padding: 0 12px}
+.jnCatainfo ul li{width:79px;float:left;height:24px;line-height:24px;position:relative} /*设置相对定位，方便后面的.hot元素进行定位*/
+.jnCatainfo ul li a{color: #444444;}
+.jnCatainfo ul li a:hover{color: #008CD7;}
+.jnCatainfo ul li a.promoted{color:#F9044E;}
+.jnCatainfo ul li .hot{background:url(../images/hot.gif) no-repeat 0 0 scroll;position:absolute;top:0;height:16px;width:21px;} /*js中追加类名为.hot的元素*/
+
+/*中间大屏广告轮换*/
+#jnImageroll{width:550px;height:320px;position:absolute;top:0;left:200px;overflow:hidden} /*相对于.janeshop定位*/
+#jnImageroll img {position: absolute;left: 0;top: 0;}/*绝对定位，相对于父元素#jnImageroll*/
+#jnImageroll div {bottom:0px;position:absolute;font-size:0}/*绝对定位，相对于父元素#jnImageroll*/
+/*图片选中后下方对应文字的样式，将背景变为蓝色，在a元素的center 39px位置上增加一个尖角背景，在js中实现*/
+#jnImageroll a.chos {background: url(../images/adindex.gif) no-repeat center 39px #37A7D7; color:#FFFFFF; }
+/*图片下方的文字排版*/
+#jnImageroll div a{display:inline-block;width:79px;height:32px;font-size:13px;color:#FFFFFF;text-align:center;background-color: #444444;overflow:hidden;margin-right:1px;padding:5px 15px;}
+#jnImageroll div a em{display:block;height:16px;width:79px;font-style:normal;cursor: pointer;}
+
+/*右侧最新动态*/
+#jnNotice{width:230px;height:320px;position:absolute;top:0;left:760px;}
+#jnNoticeInfo h3{border:solid 1px #B1B1B1;padding-left:13px;}
+#jnNoticeInfo ul{border:solid 1px #B1B1B1;border-width:0 1px 1px;padding:5px 10px;}
+#jnNoticeInfo ul li a{color: #444444;}
+#jnNoticeInfo ul li a:hover{color:#008CD7;}
+/*最新动态内容超链接提示样式 tooltip.js实现加入;*/
+#tooltip{position:absolute;border:1px solid #333;background:#f7f5d1;padding:1px;color:#333;display:none;}
+
+
+/*品牌活动－tab标签*/
+#jnBrand{width:790px; height:230px;position:absolute;top:335px; left:200px;}
+#jnBrand #jnBrandTab{height:29px;width:790px;border-bottom:1px solid #B1B1B1;position:relative}
+#jnBrand #jnBrandTab h2{float:left;height:29px;line-height:29px;text-indent:13px;width:100px;}
+#jnBrand #jnBrandTab ul{position:absolute;top:10px;right:0} /*相对于#jnBrandTab定位*/
+#jnBrand #jnBrandTab ul li{float:left;margin-right:10px;}
+#jnBrand #jnBrandTab ul li a{background-color: #E4E4E4;color:#000000;display:inline-block;padding:0px 10px;height:20px;line-height:20px;}
+
+/*注意权值，前缀加多了，权重会高，相同权值下后设置的属性才能覆盖前者。
+js中实现点击元素a后，a元素背景为粉色，且ul下方显示一个小三角背景，ul设置padding-bottom:3px;使背景显示有显示的空间*/
+#jnBrand #jnBrandTab ul .chos{background:url(../images/chos.gif) no-repeat scroll 50% bottom;padding-bottom:3px;}
+#jnBrand #jnBrandTab ul .chos a{background-color:#FA5889;color:#FFFFFF; outline: 0 none;}
+
+/*品牌活动－图片*/
+#jnBrandContent{width:790px;height:192px;position:relative;overflow:hidden}/*包裹层设置宽度790px，并设置相对定位，超出隐藏*/
+#jnBrandList{width:3200px;position:absolute;top:0;left:0;}/*list层宽度设置3200，为所有图片及其周边空白的宽度总和*/
+#jnBrandList ul li{float:left;padding:5px 7px 0;text-align:center;position:relative;height:192px;width:185px;}
+#jnBrandList ul li span{position:absolute;left:0;bottom:5px;background-color:#EFEFEF;display:inline-block;width:185px;height:20px;}
+/*品牌活动下的文字*/
+#jnBrandList ul li span a{color:#666666;}
+#jnBrandList ul li span a:hover{color:#008CD7}
+
+
+
+
+/*detail.html*/
+/*中间产品展示区域*/
+#jnProitem{position:absolute;top:0;left:200px;width:311px;height:562px;}/*产品展示区总体布局*/
+
+/*放大镜效果-start，使用jqury.zoom.js插件，可在官网下载demo*/
+#jnProitem .zoom{width:314px; height:314px;border:1px solid #BBBBBB} /*设置外边框*/
+.zoom:after {
+    content:'';
+    display:block;
+    width:33px;
+    height:33px;
+    position:absolute;
+    top:0;
+    right:0;
+    background:url(../images/zoom/icon.png);
+}
+.zoom img::selection { background-color: transparent; }
+#zoom1 img:hover { cursor: url(../images/zoom/grab.cur), default; }
+#zoom1 img:active { cursor: url(../images/zoom/grabbed.cur), default; }
+/*放大镜效果-end*/
+
+
+#jnProitem span{display:block;width:314px;text-align:center;margin:10px 0 5px 0;}/*观看清晰图片*/
+/*以下是产品列表区*/
+#jnProitem ul.imgList{font-size:0;}/*产品列表区，去掉li元素之间、上下间距*/
+#jnProitem .imgList li img{width:60px;height:60px;padding:1px;background-color:#EEE;}/*图片元素设置宽高后会等比缩放，给图片增加一个padding值，并设置背景时，图片会显示紧贴的边框*/
+#jnProitem .imgList li{float:left;margin-right:10px;}
+#jnProitem .imgList li img:hover{padding:1px;background-color:#999;}
+
+/*以下是tab框切换*/
+.tab .tab_menu{width:207px;height:22px;font-size:0;margin-top:15px;}
+.tab .tab_menu ul li{float:left;width:60px; height:20px;background-color:#F1F1F1;border:solid 1px #898989;border-style:solid solid none;margin-right:3px;font-size:10px;text-align:center;cursor:pointer;}
+.tab .tab_menu ul li:hover{background-color:#DFDFDF;}
+.tab .tab_menu ul li.selected{background-color:#6D84B4;color:#fff;}
+.tab .tab_box{margin-top:-1px;width:308px;border:solid 1px #898989;} /*设置margin-top为负值的原因是li元素下边框的border-style:none;会产生一个1px空白边*/
+
+
+/*右侧产品详细区域*/
+#jnDetails{position:absolute;top:0;left:525px;width:442px;height:562px;overflow:hidden;}
+#jnDetails .jnProDetailList li{line-height:25px;} /*若想让li元素之间有空隙，只需要设置行高，不要设置高度*/
+#jnDetails .jnProDetailList .color_change li{float:left;}
+#jnDetails .jnProDetailList .pro_size li{float:left;}
+#jnDetails .jnProDetailList strong{font-weight:normal;}
+#jnDetails .jnProDetailList li strong.del{text-decoration:line-through;} /*价格*/
+#jnDetails .jnProDetailList li.tbDetailPrice strong{font:24px Tahoma,Arial,Helvetica,sans-serif;color:#FF5500;padding:0 2px 0 5px;vertical-align:bottom;} /*促销*/
+#jnDetails .jnProDetailList li.color_change li{margin:0 20px 0 0}/*颜色选择图设置*/
+#jnDetails .jnProDetailList li.color_change li img{border:1px solid #BBBBBB;width:30px; height:30px;cursor:pointer;}
+#jnDetails .jnProDetailList li.color_change li img:hover{border:1px solid red;}
+#jnDetails .jnProDetailList li.pro_size ul li{width:30px;height:30px;border:1px solid #BBBBBB;text-align:center;margin-right:6px;height:30px;line-height:30px;cursor:pointer;}  /*尺码*/
+#jnDetails .jnProDetailList li.pro_price{margin-top:-15px;}  /*总计*/
+#jnDetails .jnProDetailList li.pro_size ul li.cur{background-color:#CDE074;color:#fff;}
+
+/*给商品评分* li元素-鼠标点击用；a元素-鼠标滑过用*/
+#jnDetails .pro_rating .rating{position:relative;width:80px;height:16px;overflow:hidden;font-size:0;background:url(../images/star-matrix.gif) 0 0 no-repeat}/*设置相对定位，并设置.rating宽高*/
+/*js实现鼠标点击事件，设置li元素鼠标点击后显示的背景*/
+#jnDetails .pro_rating .nostar {background-position:0 0}
+#jnDetails .pro_rating .onestar {background-position:0 -16px}
+#jnDetails .pro_rating .twostar {background-position:0 -32px}
+#jnDetails .pro_rating .threestar {background-position:0 -48px}
+#jnDetails .pro_rating .fourstar {background-position:0 -64px}
+#jnDetails .pro_rating .fivestar {background-position:0 -80px}
+
+
+/*以下将设置每个li元素下a元素的宽高、及绝对定位到父元素的位置。*/
+ul.rating li a{height:16px;width:16px;position:absolute;top:0;z-index:200;}
+ul.rating li.one a{left:0;}
+ul.rating li.two a{left:16px;}
+ul.rating li.three a {left:32px;}
+ul.rating li.four a {left:48px;}
+ul.rating li.five a {left:64px;}
+
+
+
+/*设置每个a元素鼠标滑过时，宽度由16变为80，高度不变，绝对定位在父元素的左侧0的位置；并设置背景图*/
+ul.rating li a:hover{display:block;width:80px;height:16px;position:absolute;left:0;background:url(../images/star-matrix.gif) 0 0 no-repeat;z-index:2}
+/*再设置a元素在鼠标滑过时，背景的位置，注意此时a元素的宽度是上一行代码设置的80px；位置是绝对定位到最左边，left：0，*/
+ul.rating li.one a:hover{background-position:0 -96px;}
+ul.rating li.two a:hover{background-position:0 -112px;}
+ul.rating li.three a:hover{background-position:0 -128px;}
+ul.rating li.four a:hover{background-position:0 -144px;}
+ul.rating li.five a:hover{background-position:0 -160px;}
+
+
+/*footer*/
+#footer{width:990px;margin: 20px auto 0;color:#666666;text-align:center;}
+
+/*提交购物车弹框*/
+#buyList{width:500px;height:200px;position:fixed;top:30%;left:30%;box-shadow:0 0 15px #4A4A4A; margin:auto auto;background-color:#FFF;z-index:10001;}
+#buyList .head{height:30px;line-height:30px;width:500px;background-color:#EBF2FA;position:absolute;top:0;left:0;font-weight:bold;text-indent:5px;}
+#buyList .content{position:absolute;top:50px;height:150px;width:500px;text-indent:2em;}
+.content .close{position:absolute;bottom:5px;right:10px;}
+
+
+
+
