@@ -1,0 +1,13 @@
+.layer{display:none;background:rgba(127,127,127,.8);left:0px;top:0px;position:fixed;height:100%;width:100%;overflow:hidden;z-index:10000; }
+.logintop{ width:380px; height:65px; background:#1e6aac; text-align:center; position:relative; margin:150px auto 0px auto;}
+.logintop h2{ font-size:30px; line-height:65px; color:#ffffff;}
+.logintop a{ cursor:pointer; background:url(../images/login_reg.png) 0px 0px no-repeat; position:absolute; width:16px; height:16px; right:10px; top:25px;}
+.logincontent{ width:300px; padding:40px 40px 50px; margin:0 auto; background:#EFEFEF; height:300px; }
+.loginbox1{ width:100%; margin-bottom:22px; float:left; position:relative; display:block;}
+.loginbox1 input{ text-indent:10px; width:296px; color:#999; font-size:13px; height:40px; line-height:40px; border:1px solid #999; border-radius:5px;}
+.loginbox2{ height:45px; line-height:45px; width:100%; margin-bottom:22px; float:left; position:relative; display:block;}
+.loginbox2 .dl{ float:left; width:97px; height:45px; line-height:45px; text-align:center; background:none repeat scroll 0% 0% #55ACEF; color:#fff; border-radius:5px; display:inline-block; font-size:14px; outline:medium none;}
+.loginbox2 .wjmm{ color:#55ACEF; margin-left:20px;}
+.loginbox2 a{cursor:pointer;}
+
+#login{  width:197px; height:45px; line-height:45px; text-align:center; background:none repeat scroll 0% 0% #55ACEF; color:#fff; border-radius:6px;  font-size:18px;  font-weight: bold; }

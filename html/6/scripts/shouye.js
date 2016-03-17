@@ -1,5 +1,5 @@
-//¼ÓÔØÔÚÎÄ±¾¶ÁÈ¡Ö®ºóµÄjsÓï¾ä ¿ªÊ¼ =============================================================
-function Scroll(obj,speed,interval){    //¸¸¼¶ÈİÆ÷£¬ÂÖ²¥ËÙ¶È£¬ÇĞ»»¼ä¸ô
+
+function Scroll(obj,speed,interval){    //çˆ¶çº§å®¹å™¨ï¼Œè½®æ’­é€Ÿåº¦ï¼Œåˆ‡æ¢é—´éš”
     $("."+obj).each(function(){
         var $box = $(this),
             $imgUl = $box.children(".imgList"),
@@ -15,7 +15,7 @@ function Scroll(obj,speed,interval){    //¸¸¼¶ÈİÆ÷£¬ÂÖ²¥ËÙ¶È£¬ÇĞ»»¼ä¸ô
             k = 0,
             Player;
         $imgUl.css("width",n*width);
-        function scroll(){                //ÂÖ²¥ÊÂ¼ş
+        function scroll(){                //è½®æ’­äº‹ä»¶
             $imgUl.stop().animate({left:-width},speed,function(){
                 k += 1;
                 $imgUl.css("left",0);
@@ -27,7 +27,7 @@ function Scroll(obj,speed,interval){    //¸¸¼¶ÈİÆ÷£¬ÂÖ²¥ËÙ¶È£¬ÇĞ»»¼ä¸ô
                 $btnUl.children("li").eq(k).addClass('cur');
             });
         }
-        $btnLi.click(function(){          //Ğ¡Ô²µãµã»÷ÊÂ¼ş
+        $btnLi.click(function(){          //å°åœ†ç‚¹ç‚¹å‡»äº‹ä»¶
             var index = $btnLi.index(this);
             $(this).addClass('cur').siblings("li").removeClass('cur');
             if(index >= k){
@@ -46,7 +46,7 @@ function Scroll(obj,speed,interval){    //¸¸¼¶ÈİÆ÷£¬ÂÖ²¥ËÙ¶È£¬ÇĞ»»¼ä¸ô
             }
             k = index;
         });
-        $btnPreNex.click(function(){      //×óÓÒ°´Å¥µã»÷ÊÂ¼ş
+        $btnPreNex.click(function(){      //å·¦å³æŒ‰é’®ç‚¹å‡»äº‹ä»¶
             var index = $btnLi.index(this);
             if($(this).hasClass('next')){
                 if(!$imgUl.is(":animated")){
@@ -74,7 +74,7 @@ function Scroll(obj,speed,interval){    //¸¸¼¶ÈİÆ÷£¬ÂÖ²¥ËÙ¶È£¬ÇĞ»»¼ä¸ô
                 }
             }
         });
-        $box.hover(                     //Êó±êÒÆÈë¡¢ÒÆ³öÊÂ¼ş
+        $box.hover(                     //é¼ æ ‡ç§»å…¥ã€ç§»å‡ºäº‹ä»¶
             function(){
                 clearInterval(Player);
                 $btnPreNex.addClass('show');
@@ -87,21 +87,8 @@ function Scroll(obj,speed,interval){    //¸¸¼¶ÈİÆ÷£¬ÂÖ²¥ËÙ¶È£¬ÇĞ»»¼ä¸ô
         Player = setInterval(function(){scroll()},interval);
     });
 }
-$(function () {                           //¶ÁÈ¡ÂÖ²¥ÊÂ¼ş
+$(function () {                           //è¯»å–è½®æ’­äº‹ä»¶
     Scroll("bannerCon",600,2000);
 
-//    µÇÂ½ÕÚÕÖ²ãµ¯³ö
-    $('#login').click(function(){
-
-        $('.layer').show();
-
-
-    });
-
-    $('.logintop a').click(function(){
-
-        $('.layer').hide();
-
-    });
 });
 
