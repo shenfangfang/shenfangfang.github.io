@@ -1,0 +1,11 @@
+.cell{width:300px;color:#a2a2a2;float:left;margin-right:30px;}
+.cell h5{font-size:15px;color:#696969;}
+.cell .leftbox{width:40%;float:left;}
+.cell .rightbox{width:50%;font-size:12px;float:right;}
+.cell p{text-indent:2em;text-align:left;margin-bottom:20px;margin-top:-10px;}
+.cell .rightbox .left{margin-right:5px;float:left;}
+.left .num{border:1px solid #d1d1d1;margin-left:20px;border-radius:5px;color:#565656;text-align:center;}
+.left span,.right span{display:block;}
+.right .zhishu{color:#fff;padding:1px;background-color:#797979;text-align:center;}
+.cell .rightbox .right{float:right;}
+#container{width:1000px;margin:0 auto;}
