@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        canvas{border:1px solid red;display:none;}
+        /*执行背景变换动画*/
+        #sunRise{position:relative;border:1px solid black;height:230px;width:230px;animation:backColor 5s linear;animation-fill-mode:forwards;}
+        img{position:absolute;}
+        /*执行太阳升起动画，并且设置太阳周边光晕*/
+        img#sunImage{left:70px;top:100px;animation:sunRise 5s linear ;animation-fill-mode: forwards;box-shadow:0 0 10px 15px #FEFFCF;border-radius: 40px;}
+         /*太阳升起动画*/
+        @keyframes sunRise {
+            0%{top:130px;}
+            100%{top:30px;}
+            
+        }
+        /*太阳升起时背景变换动画*/
+        @keyframes backColor {
+            0%{background-color:#4BB4F6;}
+            100%{background-color:#E3F4FE;}
+
+        }
+    </style>
+</head>
+<body>
+<canvas id="sunCanvas" height="80px" width="80px;"></canvas>
+<canvas id="grassCanvas" height="230px" width="230px;"></canvas>
+<div id="sunRise"></div>
+</body>
+<script>
+      //canvas画出太阳
+    var sunCanvas=document.getElementById('sunCanvas');
+    if(sunCanvas.getContext){
+        var sunCtx=sunCanvas.getContext('2d');
+        sunCtx.arc(40,40,40,0,Math.PI*360/180,true);
+        sunCtx.fillStyle='#FEFF27';
+        sunCtx.fill();
+    }
+
+      //canvas画出草地
+    var grassCanvas=document.getElementById('grassCanvas');
+    if(grassCanvas.getContext){
+        var grassCtx=grassCanvas.getContext('2d');
+        grassCtx.arc(110,420,250,0,Math.PI*180/180,true);
+        grassCtx.fillStyle='#92CF06';
+        grassCtx.fill();
+    }
+    //将太阳和草地转化成image ，并且设置id属性，添加到div中
+    var sunImage=convertCanvasToImage(sunCanvas);
+    var grassImage=convertCanvasToImage(grassCanvas);
+    sunImage.setAttribute('id','sunImage');
+    grassImage.setAttribute('id','grassImage');
+
+    var sunRise=document.getElementById('sunRise');
+    sunRise.appendChild(sunImage);
+    sunRise.appendChild(grassImage);
+
+      //以下是一个函数，将canvas转换为图片格式
+    function convertCanvasToImage(canvas) {
+        var image = new Image();
+        image.src = canvas.toDataURL("image/png");
+        return image;
+    }
+
+</script>
+</html>
