@@ -1,0 +1,25 @@
+a, address, b, big, blockquote, body, center, cite, code, dd, del, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{margin:0;padding:0}
+body{font: 12px/150% Arial,Verdana,"\5b8b\4f53";color:#666;background:#fff;-webkit-font-smoothing: antialiased;
+}
+a{text-decoration:none;color:#666}
+ul li{list-style:none;}
+img{border:0;vertical-align: middle}
+.clr{clear:both;}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;}
+
+/*轮播*/
+/*今日推荐轮播*/
+#todays .slider{position:relative;width:1000px;height:164px;overflow:hidden;margin:30px auto;}
+.slider-main .slider-panel{float:left;width:1000px;overflow:hidden;}
+.slider-panel div.fore1,.slider-panel div.fore2,.slider-panel div.fore3,.slider-panel div.fore4{float:left;width:249px;overflow:hidden;margin-right:1px;}
+
+#todays .slider-page a{margin-top:41px;}
+.slider-page a{position:absolute;display:none;width:28px;height:62px;line-height:52px;color:#fff;background:rgba(0,0,0,.2);font-size:22px;font-weight:400;font-family:simsun;text-align:center;}
+.slider-prev{left:0;}
+.slider-next{right:0}
+.slider:hover .slider-page a{display:block;}

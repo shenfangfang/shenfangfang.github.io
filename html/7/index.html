@@ -1,103 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-    <script style="text/javascript" src="../../css/jquery-1.11.3.js"></script>
-    <style type="text/css">
-        * { margin:0; padding:0;}
-        ul, li { list-style:none; }
-        .v_show{width:730px;margin:20px auto;position:relative;background-color:rgba(0,0,0,0.1); }/*设置整个区域宽度，居中，并设置背景色*/
-        .highlight_tip{float:right;margin:14px 14px 0 0;} /*设置圆点显示在右上角，并使圆点居中，右侧留有一定宽度*/
-        .highlight_tip span{float:left;text-indent:-9999px; margin:0 2px; width:6px;height:6px;background-color:rgba(255,255,255,1);border-radius:3px;} /*使用border-radius特性设置每个span为白色圆点，且使原先span中的文字不显示（text-indent:-9999px;）*/
-        .highlight_tip .current{width:6px;height:6px;background-color:rgba(36,146,255,1);border-radius:3px;} /*设置当前页面的圆点为蓝色圆点*/
-
-        .v_caption .change_btn{ margin:0}
-        /* 左右按键相对于v_show定位*/
-        .v_caption .change_btn .prev{width:20px;height:30px;line-height:30px;font-size:30px;font-family: simsun;position:absolute;top:50%;z-index: 1;left:0;color:white;}
-        .v_caption .change_btn .next {width:20px;height:30px;line-height:30px;font-size:30px;font-family: simsun;position:absolute;top:50%;z-index:1;right:0;color:white; }
-        .v_caption .change_btn .prev:hover, .v_caption .change_btn .next:hover{background-color:#c0c0c0;} /*左右按钮鼠标滑过时显示背景色*/
-
-
-        .v_content{width:730px;height:450px;overflow:hidden;position:relative;}
-        .v_content_list { position:absolute; width:3700px;top:0px; left:0px; }
-        .v_content_list ul li{float:left;}
-        .v_content_list img{margin:15px 0px 0 0px;}
-        .v_content_list h4{margin-left:10px;}
-        .v_content_list span{margin-left:10px;}
-
-         .yd{width:6px;height:6px;background-color:rgba(36,146,255,1);border-radius:3px;}
-    </style>
+    <meta charset=UTF-8" />
+    <meta name="description" content="经典轮播-整个列表轮播 » 申芳芳" />
+    <meta name="keywords" content="经典轮播-整个列表轮播" />
+    <meta name="author" content="申芳芳, shenfangfang" />
+    <title>经典轮播-整个列表轮播 » 申芳芳</title>
+    <link rel="stylesheet" href="index.css"/>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="index.js"></script>
 </head>
 <body>
-<div class="v_show">
-    <div class="v_caption">
-        <div class="highlight_tip">
-            <span class="current">1</span><span>2</span><span>3</span><span>4</span>
+<div id="todays" class="clearfix">
+            <div class="mc slider">
+                <ul class="slider-main" style="width:6000px;position:absolute;left:-1000px;">
+                    <li class="slider-panel fore4">
+                        <div class="fore1"><a href="javascript:void(0)"><img src="images/57b421f4N15124d87.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore2"><a href="javascript:void(0)"><img src="images/57b41170Nfb4b6888.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore3"><a href="javascript:void(0)"><img src="images/5510d809N70c3eb71.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore4"><a href="javascript:void(0)"><img src="images/5510e394N7d91092f.jpg" alt=""/></a>
+                        </div>
+                    </li>
+                    <li class="slider-panel fore1">
+                        <div class="fore1"><a href="javascript:void(0)"><img src="images/57a983c3N30f77026.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore2"><a href="javascript:void(0)"><img src="images/57aacbadNca63b505.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore3"><a href="javascript:void(0)"><img src="images/57ad27d4N1c7ff953.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore4"><a href="javascript:void(0)"><img src="images/57ad27efNd50cda9d.jpg" alt=""/></a>
+                        </div>
+                    </li>
+                    <li class="slider-panel fore2">
+                        <div class="fore1"><a href="javascript:void(0)"><img src="images/57ad904eN83c185dd.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore2"><a href="javascript:void(0)"><img src="images/57ad9033Nb85e945d.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore3"><a href="javascript:void(0)"><img src="images/57b2aa28N1b2a9d31.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore4"><a href="javascript:void(0)"><img src="images/57b2d922Ne09b094e.jpg" alt=""/></a>
+                        </div>
+                    </li>
+                    <li class="slider-panel fore3">
+                        <div class="fore1"><a href="javascript:void(0)"><img src="images/57b3d349Nfb435e9f.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore2"><a href="javascript:void(0)"><img src="images/57b3ff74N3e313c2e.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore3"><a href="javascript:void(0)"><img src="images/57b54e5aN732cf3a2.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore4"><a href="javascript:void(0)"><img src="images/57b67e53Na6e07c07.jpg" alt=""/></a>
+                        </div>
+                    </li>
+                    <li class="slider-panel fore4">
+                        <div class="fore1"><a href="javascript:void(0)"><img src="images/57b421f4N15124d87.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore2"><a href="javascript:void(0)"><img src="images/57b41170Nfb4b6888.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore3"><a href="javascript:void(0)"><img src="images/5510d809N70c3eb71.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore4"><a href="javascript:void(0)"><img src="images/5510e394N7d91092f.jpg" alt=""/></a>
+                        </div>
+                    </li>
+                    <li class="slider-panel fore1">
+                        <div class="fore1"><a href="javascript:void(0)"><img src="images/57a983c3N30f77026.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore2"><a href="javascript:void(0)"><img src="images/57aacbadNca63b505.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore3"><a href="javascript:void(0)"><img src="images/57ad27d4N1c7ff953.jpg" alt=""/></a>
+                        </div>
+                        <div class="fore4"><a href="javascript:void(0)"><img src="images/57ad27efNd50cda9d.jpg" alt=""/></a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="slider-page">
+                    <a href="javascript:void(0)" class="slider-prev"><</a>
+                    <a href="javascript:void(0)" class="slider-next">></a>
+                </div>
+            </div>
+
         </div>
-        <div class="change_btn">
-            <span class="prev" >&lt</span>
-            <span class="next">&gt</span>
-        </div>
-    </div>
-    <div class="v_content">
-        <div  class="v_content_list">
-            <ul>
-                <li><a href="#"><img src="images/1.jpg"  /></a></li>
-                <li><a href="#"><img src="images/2.jpg"  /></a></li>
-                <li><a href="#"><img src="images/3.jpg"  /></a></li>
-                <li><a href="#"><img src="images/4.jpg" /></a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="yd"></div>
+
 </body>
-<script type="text/javascript">
-    $(function(){
-        var page = 1;
-        var i = 1; //每版放1个图片
-        $("span.prev").click(function(){
-            var $parent=$(this).parents("div.v_show");
-            var $v_content=$parent.find("div.v_content");
-            var $v_show=$parent.find("div.v_content_list");
-            var v_width=$v_content.width();
-            var len=$v_show.find("li").length;
-            var page_count=Math.ceil(len/i);
-            if( !$v_show.is(":animated") ){    //判断“视频内容展示区域”是否正在处于动画
-                if( page == 1 ){  //已经到第一个版面了,如果再向前，必须跳转到最后一个版面。
-                    $v_show.animate({ left : '-='+v_width*(page_count-1) }, "slow");
-                    page = page_count;
-                }else{
-                    $v_show.animate({ left : '+='+v_width }, "slow");
-                    page--;
-                }
-            }
-            $parent.find("span").eq((page-1)).addClass("current").siblings().removeClass("current");
-        });
-
-        $("span.next").click(function(){
-            $parent=$(this).parents("div.v_show");
-            $v_content=$parent.find("div.v_content");
-            $v_show=$parent.find("div.v_content_list");
-            v_width=$v_content.width();
-            var len=$v_show.find("li").length;
-            var page_count=Math.ceil(len/i);
-            if(page==page_count){
-                $v_show.animate({left:'0px'},"slow");
-                page=1;
-            }
-            else{
-                 $v_show.animate({left:'-='+v_width},"slow");
-                page++;
-
-            }
-            $parent.find("span").eq((page-1)).addClass("current").siblings().removeClass("current");
-        });
-
-    });
-
-
-</script>
-
 </html>

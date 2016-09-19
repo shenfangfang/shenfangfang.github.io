@@ -1,0 +1,80 @@
+.banner {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    background: rgb(255,255,255) url("images/slogan-bg4.png");
+}
+.bg0{background: rgb(255,255,255) url("images/slogan-bg4.png");}
+.bg1{background: rgb(172,232,231) url("images/slogan-bg1.png");}
+.bg2{background: rgb(245,242,223) url("images/slogan-bg2.png");}
+.bg3{background: rgb(255,231,207) url("images/slogan-bg3.png");}
+.bg4{background: rgb(255,67,67) url("images/youzan-bg.png");}
+.banner .bannerCon {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1000px;
+    height: 500px;
+    margin-left: -500px;
+    overflow: hidden;
+}
+.bannerCon .imgList {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 99999px;
+    height: 500px;
+}
+.bannerCon .imgList li {
+    float: left;
+    width: 1000px;
+    height: 500px;
+}
+.bannerCon .imgList li a {
+    position: relative;
+    display: block;
+    height: 100%;
+}
+.bannerCon .imgList li img {
+    width: 1000px;
+    height: 500px;
+}
+.bannerCon .pre-nex {
+    display: none;
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 60px;
+    margin-top: -40px;
+    font: bold 40px/60px Simsun;
+    color: #ccc;
+    text-align: center;
+    border:none;
+    background: rgba(0,0,0,.30);
+    cursor: pointer;
+    z-index: 3;
+}
+.bannerCon .pre-nex.show { display: inline-block; }
+.bannerCon .prev { left: 5%; }
+.bannerCon .next { right: 5%; }
+.bannerCon .btnList {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    height: 12px;
+    text-align:center;
+    z-index: 2;
+    _overflow: hidden;
+}
+.bannerCon .btnList li { display: inline; }
+.bannerCon .btnList li span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 6px;
+    background-color:#525252;
+    cursor: pointer;
+}
+.bannerCon .btnList li.cur span { background-color: #d3d3d3; }

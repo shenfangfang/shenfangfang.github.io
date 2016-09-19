@@ -1,0 +1,31 @@
+a, address, b, big, blockquote, body, center, cite, code, dd, del, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, label, legend, li, ol, p, pre, small, span, strong, u, ul, var{margin:0;padding:0}
+body{font: 12px/150% Arial,Verdana,"\5b8b\4f53";color:#666;background:#fff;-webkit-font-smoothing: antialiased;
+}
+a{text-decoration:none;color:#666}
+ul li{list-style:none;}
+img{border:0;vertical-align: middle}
+.clr{clear:both;}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;}
+
+/*轮播*/
+#lunbo{position:relative;width:730px;height:454px;margin:30px auto;overflow:hidden;}
+#one li{float:left;width:0;}
+
+#two{position:absolute;left:280px;bottom:15px;width:200px;z-index:2}
+#two li{float:left;width:18px;height:18px;border-radius:9px;text-align:center;background:#666;margin-left:10px;}
+#two a{color:#fff;}
+#two li:hover{background-color:#c81623}
+/*.on 方便js调用*/
+#one li.on{width:730px;}
+#two li.on{background-color:#c81623}
+/*左右小箭头*/
+#left,#right{width:28px;height:62px;line-height:62px;background:rgba(0,0,0,.2); z-index:2;}
+#left{position:absolute;left:0px;top:50%}
+#right{position:absolute;right:0px;top:50%}
+#lunbo .slider-page a{display:none;text-align:center;color:#fff;font-size:22px;font-weight:400;font-family:simsun;}
+#lunbo:hover .slider-page a{display:block}
