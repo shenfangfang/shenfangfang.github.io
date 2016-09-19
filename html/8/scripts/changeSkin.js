@@ -7,7 +7,7 @@ $(function(){
     if(cookie_skin){
         switchSkin(cookie_skin);
     }
-    //点击事件
+    //点击事件,调用函数来保存cookie
     $("#skin li").click(function(){
         switchSkin(this.id);/*调用修改皮肤函数，this.id去的 $("#skin li")的id*/
     });
@@ -18,7 +18,7 @@ $(function(){
             .siblings().removeClass("selected");
         //通过更改导入的皮肤样式的href属性，改变皮肤。
         $("#cssfile").attr("href","styles/skin/"+skinName+".css");
-        //存cookie
+        //存cookie，将当前cookie保存为MyCssSkin
         $.cookie("MyCssSkin",skinName,{path:'/',expires:10});
     }
 })
