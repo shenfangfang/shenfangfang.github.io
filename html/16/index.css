@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  font: 12px/150% "Microsoft Yahei", Arial, Tahoma, Helvetica, "SimSun", "Hiragino Sans GB", sans-serif;
+  color: #333;
+  background: #f5f5f5;
+}
+i {
+  font-style: normal;
+}
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.hide {
+  display: none;
+}
+.container {
+  width: 952px;
+  border: 1px solid #efefef;
+  border-bottom: 1px solid #e2e2e2;
+  background-color: #fff;
+  margin: 0 auto;
+}
+.container a:hover {
+  color: #f30;
+}
+.container dl {
+  width: 420px;
+  margin: 20px;
+  overflow: hidden;
+  float: left;
+}
+.container dl dt .tit {
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-bottom: 1px solid #d3d3de;
+}
+.container dl dt .tit a {
+  display: block;
+  height: 28px;
+  line-height: 30px;
+  border-bottom: 3px solid #ffb230;
+  float: left;
+}
+.container dl dt .tit a.more {
+  font-size: 12px;
+  color: #999;
+  background: url(images/more.gif) center right no-repeat;
+  border-bottom: none;
+  padding-right: 20px;
+  float: right;
+  font-weight: normal;
+}
+.container dl dt .tit a.more:hover {
+  color: #f30;
+}
+.container dl dd {
+  border-bottom: 1px solid #e8e7ed;
+  padding: 10px 0;
+}
+.container dl dd .t {
+  height: 30px;
+  line-height: 30px;
+}
+.container dl dd .t i {
+  background: #ddd;
+  display: block;
+  float: left;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 16px;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+.container dl dd .t i.num1 {
+  background: #ff4939;
+}
+.container dl dd .t i.num2 {
+  background: #ff8e15;
+}
+.container dl dd .t i.num3 {
+  background: #ffdb15;
+}
+.container dl dd .t a {
+  font-size: 14px;
+  float: left;
+}
+.container dl dd .t span {
+  float: right;
+}
+.container dl dd .f {
+  height: 80px;
+}
+.container dl dd .f:hover .num {
+  background: #ff4939;
+}
+.container dl dd .f i {
+  background: #ddd;
+  display: block;
+  float: left;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 16px;
+  margin-top: 30px;
+  margin-right: 20px;
+}
+.container dl dd .f i.num1 {
+  background: #ff4939;
+}
+.container dl dd .f i.num2 {
+  background: #ff8e15;
+}
+.container dl dd .f i.num3 {
+  background: #ffdb15;
+}
+.container dl dd .f .cc .img {
+  float: left;
+  margin-right: 15px;
+}
+.container dl dd .f .cc .inf {
+  float: left;
+  position: relative;
+  width: 280px;
+  overflow: hidden;
+}
+.container dl dd .f .cc .inf h3 {
+  font-size: 100%;
+  font-weight: normal;
+}
+.container dl dd .f .cc .inf h3 a {
+  font-size: 16px;
+}
+.container dl dd .f .cc .inf p {
+  height: 38px;
+  overflow: hidden;
+  color: #808080;
+}
+.container dl dd .f .cc .inf .btn {
+  position: absolute;
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  border: 1px solid #f30;
+  border-radius: 5px;
+  right: 0;
+  top: 2px;
+}
+.container dl dd .f .cc .inf .btn a {
+  color: #f30;
+  font-size: 14px;
+}
